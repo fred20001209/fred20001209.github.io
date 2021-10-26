@@ -1,0 +1,58 @@
+# Project: 基于线性表的图书信息管理系统
+# Makefile created by Dev-C++ 5.15
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o InitList_Sq.o PrintList_Sq.o SerchMostValue_Sq.o AddBook_Sq.o DelBook_Sq.o CreatLinklist.o PrintLinklist.o SortLinklist.o AddBook_linklist.o DelBook_linlist.o
+LINKOBJ  = main.o InitList_Sq.o PrintList_Sq.o SerchMostValue_Sq.o AddBook_Sq.o DelBook_Sq.o CreatLinklist.o PrintLinklist.o SortLinklist.o AddBook_linklist.o DelBook_linlist.o
+LIBS     = -L"D:/dev c++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -g3
+INCS     = -I"D:/dev c++/Dev-Cpp/MinGW64/include" -I"D:/dev c++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/dev c++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/dev c++/Dev-Cpp/MinGW64/include" -I"D:/dev c++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/dev c++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/dev c++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 基于线性表的图书信息管理系统.exe
+CXXFLAGS = $(CXXINCS) -m32 -g3
+CFLAGS   = $(INCS) -m32 -g3
+RM       = del /q
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+InitList_Sq.o: InitList_Sq.c
+	$(CC) -c InitList_Sq.c -o InitList_Sq.o $(CFLAGS)
+
+PrintList_Sq.o: PrintList_Sq.c
+	$(CC) -c PrintList_Sq.c -o PrintList_Sq.o $(CFLAGS)
+
+SerchMostValue_Sq.o: SerchMostValue_Sq.c
+	$(CC) -c SerchMostValue_Sq.c -o SerchMostValue_Sq.o $(CFLAGS)
+
+AddBook_Sq.o: AddBook_Sq.c
+	$(CC) -c AddBook_Sq.c -o AddBook_Sq.o $(CFLAGS)
+
+DelBook_Sq.o: DelBook_Sq.c
+	$(CC) -c DelBook_Sq.c -o DelBook_Sq.o $(CFLAGS)
+
+CreatLinklist.o: CreatLinklist.c
+	$(CC) -c CreatLinklist.c -o CreatLinklist.o $(CFLAGS)
+
+PrintLinklist.o: PrintLinklist.c
+	$(CC) -c PrintLinklist.c -o PrintLinklist.o $(CFLAGS)
+
+SortLinklist.o: SortLinklist.c
+	$(CC) -c SortLinklist.c -o SortLinklist.o $(CFLAGS)
+
+AddBook_linklist.o: AddBook_linklist.c
+	$(CC) -c AddBook_linklist.c -o AddBook_linklist.o $(CFLAGS)
+
+DelBook_linlist.o: DelBook_linlist.c
+	$(CC) -c DelBook_linlist.c -o DelBook_linlist.o $(CFLAGS)
